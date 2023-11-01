@@ -152,6 +152,7 @@ class _LinkedScrollController extends ScrollController {
       physics: physics,
       context: context,
       initialPixels: initialScrollOffset,
+      keepScrollOffset: keepScrollOffset, // Potix:
       oldPosition: oldPosition,
     );
   }
@@ -200,11 +201,13 @@ class _LinkedScrollPosition extends ScrollPositionWithSingleContext {
     required ScrollPhysics physics,
     required ScrollContext context,
     double? initialPixels,
+    bool keepScrollOffset = true, // Potix:
     ScrollPosition? oldPosition,
   }) : super(
           physics: physics,
           context: context,
           initialPixels: initialPixels,
+          keepScrollOffset: keepScrollOffset, // Potix:
           oldPosition: oldPosition,
         ) {
     assert(owner != null);
